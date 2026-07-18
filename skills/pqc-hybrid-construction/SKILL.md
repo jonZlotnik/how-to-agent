@@ -1,0 +1,39 @@
+---
+name: pqc-hybrid-construction
+description: "Use when combining a classical and a post-quantum primitive into a hybrid KEM or signature, when choosing a combiner, or when deciding whether a signature use case justifies a hybrid at all."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# PQC Hybrid Construction
+
+A hybrid combines a classical primitive (e.g. X25519) with a post-quantum one (e.g. ML-KEM-768) so the result is at least as strong as the stronger of the two — an attacker must break both. Hybrid KEMs and hybrid signatures hedge different threats and carry different urgency, and the real risk in either is not the primitive but the combiner: how you bind, derive, and deprecate. A hybrid is a transition bridge, not a permanent doubling of your trust budget.
+
+## When to use
+
+- Building or reviewing a hybrid KEM or hybrid signature
+- Choosing between a generic combiner and a protocol-specific one
+- Deciding whether a signature (vs. a KEM) actually needs hybridising
+- A roll-your-own combiner is on the table
+
+## Protocol
+
+1. **Hybridise KEMs by default during transition; hybridise signatures only with cause.** KEMs defend against Harvest-Now-Decrypt-Later — a recorded ciphertext is broken later — so the hedge is urgent. A signature is verified at receipt; there's no stockpile to forge retroactively. Reserve hybrid signatures for code signing on long-lived hardware, CA root keys, or a regime that mandates it.
+2. **Use the standard combiner for your protocol.** TLS 1.3: the `X25519MLKEM768` named group. Non-TLS needing a generic hybrid KEM: X-Wing, where library support exists. Don't invent one.
+3. **If you must roll your own, bind the full transcript.** Feed *both* ciphertexts and *both* public keys into the KDF input string, derive through a KDF, and have it reviewed before shipping.
+4. **Derive, never combine by hand.** Both X25519 and ML-KEM produce 32-byte secrets — run them through a KDF to the length you actually need.
+5. **Plan the deprecation to pure post-quantum.** A hybrid that stays load-bearing forever carries classical-side complexity long after it has stopped earning its keep.
+
+## Red flags (rationalizations to reject)
+
+- "We XOR the two secrets." — Not a combiner; that's at most as strong as the weaker secret. Use a KDF.
+- "Concatenate the secrets and hash." — Without binding both public keys and ciphertexts, there are known weaknesses against malicious peers.
+- "Both secrets are 32 bytes, so truncate to one." — Truncation throws away entropy; the KDF decides the session-key length.
+- "Hybrid is our permanent design." — It's a bridge. Budget the path to pure post-quantum now, or it becomes debt.
+
+## Composes with
+
+- [[pqc-primitive-selection]] — supplies the post-quantum half of the hybrid.
+- [[design-by-contract]] — a combiner's binding inputs and output length are a contract worth writing down.
+- [[pqc-bugs-protocol]] — downgrade, transcript-omission, and XOR-combiner findings live here.
+- [[mpc-audit]] — the same combiner-and-binding discipline used for threshold cryptography.

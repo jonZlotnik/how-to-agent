@@ -1,0 +1,10 @@
+title: Rule of Robustness
+summary: >-
+  Be liberal in what you accept, rigorous in what you emit. The boundaries of a program are where the world's mess meets your invariants; the input side absorbs reasonable variation, and the output side never inflicts variation on anyone downstream. Robustness is a child of transparency and simplicity — opaque, magic-handling code is brittle, not robust.
+when_to_use: >-
+  Use when designing a parser, deserializer, API input layer, or any boundary that receives data from elsewhere. Also use when designing what your program emits. Also use when reviewing code that 'just trusts' upstream input or emits sloppily-formed output.
+related:
+  - crash-early
+  - rule-of-textuality
+  - design-by-contract
+  - prove-dont-assume

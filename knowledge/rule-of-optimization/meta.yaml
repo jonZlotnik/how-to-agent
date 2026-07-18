@@ -1,0 +1,10 @@
+title: Rule of Optimization
+summary: >-
+  Performance work without measurement is folklore. Code that's been optimized for a bottleneck it doesn't have is just more complicated code with worse readability and no benefit. Measure, locate the actual bottleneck, fix it at the highest possible level, then stop.
+when_to_use: >-
+  Use when something feels slow and you're tempted to start tuning. Also use during code review of a 'performance' PR. Also use when a previous decision is being justified on speculative speed grounds.
+related:
+  - prototype-to-learn
+  - prove-dont-assume
+  - listen-to-nagging-doubts
+  - reversible-decisions

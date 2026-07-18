@@ -1,0 +1,10 @@
+title: Crash Early
+summary: >-
+  A program that has wandered into an impossible state is no longer your program. Every line it executes afterwards is operating on a lie. The earlier and louder it stops, the smaller the blast radius, the more honest the diagnostic, and the less time you spend later wondering how data got into that shape.
+when_to_use: >-
+  Use when writing error-handling code, defensive checks, fallbacks, retries, or 'in case this ever happens' branches. Also use when reviewing code that silently catches and swallows exceptions, or returns sentinel values on bug-shaped input.
+related:
+  - design-by-contract
+  - fix-the-problem-not-the-blame
+  - prove-dont-assume
+  - listen-to-nagging-doubts

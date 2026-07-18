@@ -1,0 +1,32 @@
+# PQC Bugs: Primitive Level
+
+This is a recall list, not a checklist — a way to recognise the shape of a primitive-level finding when you see it in ML-KEM or ML-DSA code. These six bug classes recur across post-quantum audits. If your code resembles one of them, don't assume it's a benign instance: eliminate the pattern, or write down explicitly why your instance is safe and have that reviewed.
+
+## When to use
+
+- Auditing or reviewing an ML-KEM / ML-DSA implementation
+- A library is being vetted for production ([[pqc-library-selection]])
+- Triaging a conformance or KAT failure in the primitive layer
+- Writing tests that target primitive bug classes
+
+## The bug classes
+
+1. **Variable-time secret-dependent code.** The most common finding. Source can look constant-time while the compiler emits branches, the CPU does data-dependent conditional moves, or memory access leaks through cache. Verify at the binary level (`ctgrind`/`dudect`/`TIMECOP`), not the source — the KyberSlash family exploited exactly this.
+2. **Missing or wrong bounds checks.** ML-KEM and ML-DSA require coefficient-bounds checks on parsed inputs. Audits find the check omitted, off-by-one, or short-circuited on a fast path (correct on the slow path, wrong on the fast one).
+3. **Length-validation gaps at the API boundary.** Constructors that accept byte buffers without validating against the parameter set's expected length — e.g. a decapsulation key one byte short of 2400 accepted silently, leaving the implicit-rejection secret partially missing and weakening the FO transform. Validate lengths; refuse partial keys.
+4. **Rejection-sampling errors.** Secret and error distributions are sampled by rejection; a subtly wrong distribution (right *count*, wrong shape) interoperates with reference code but degrades the security claim.
+5. **Decapsulation-oracle leaks.** ML-KEM's CCA security needs decapsulation indistinguishable on success and implicit rejection. Failures observable via timing, error codes, log lines, exception types, or "optimisation" early returns break it.
+6. **Determinism failures in ML-DSA.** Implementations that claim to support both deterministic and randomised signing but implement one, or mix randomness sources unpredictably.
+
+## Red flags (rationalizations to reject)
+
+- "The source is constant-time." — The optimiser disagrees; check the binary.
+- "A malformed key is the caller's problem." — Silently accepting a short key produces wrong results instead of a loud failure. Validate and refuse.
+- "It round-trips against the reference." — Interop doesn't prove the distribution or the rejection path is correct.
+
+## Composes with
+
+- [[pqc-conformance-testing]] — the conformance categories are built to catch exactly these classes.
+- [[crash-early]] — a wrong-length or out-of-bounds input should fail loudly, not produce a quiet wrong answer.
+- [[pqc-bugs-protocol]] — the integration-layer companion to these primitive findings.
+- [[mpc-audit]] — the same constant-time and validation discipline for threshold cryptography.

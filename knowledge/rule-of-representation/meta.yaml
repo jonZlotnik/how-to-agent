@@ -1,0 +1,10 @@
+title: Rule of Representation
+summary: >-
+  Fold knowledge into data so the code can stay stupid. A complex data structure walked by simple logic is easier to read, easier to extend, and easier to verify than simple data walked by complex logic. Logic shaped like the table it's mimicking is begging to *be* the table.
+when_to_use: >-
+  Use before writing a long if/elif/switch on string or enum values. Also use when control flow branches mirror rows in a spec table, or when business rules read like 'when X then Y, when X' then Y'…'. Also use during review of cascading conditionals.
+related:
+  - rule-of-generation
+  - dry-audit
+  - orthogonality-check
+  - design-by-contract

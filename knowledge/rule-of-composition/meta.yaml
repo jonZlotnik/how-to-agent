@@ -1,0 +1,10 @@
+title: Rule of Composition
+summary: >-
+  Programs should be expected to feed each other. A tool that only talks to humans, or only emits a private binary format, or only runs as a daemon, has cut itself off from the rest of the system. Design as if your output is someone else's input — because eventually it will be.
+when_to_use: >-
+  Use when designing a new program, tool, or service interface. Also use when a tool only exposes its data through an interactive UI, a custom binary protocol, or a single use case it was 'built for'.
+related:
+  - rule-of-textuality
+  - rule-of-silence
+  - rule-of-separation
+  - orthogonality-check

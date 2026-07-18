@@ -1,0 +1,10 @@
+title: PQC Bugs: Operational and Dependency
+summary: >-
+  The migration can be correct in the primitive and the protocol and still fail in operations and key management. These seven bug classes are the recall list for the layer where keys are generated, stored, rotated, and linked across an FFI boundary — and where a successfully migrated system quietly undoes its own migration. Recognise the pattern; either eliminate it or justify your instance in writing.
+when_to_use: >-
+  Use when auditing the operational and dependency side of a post-quantum deployment — keygen entropy, key leakage, rotation amnesia, prekey replay, reference-implementation-in-production, stale libraries, FFI boundaries.
+related:
+  - pqc-messaging-migration
+  - pqc-library-selection
+  - broken-windows
+  - pqc-bugs-primitive

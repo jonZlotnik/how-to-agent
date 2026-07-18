@@ -1,0 +1,37 @@
+---
+name: pqc-messaging-migration
+description: "Use when adding post-quantum protection to secure messaging — one-to-one initial keys, the continuous ratchet, group messaging, or stored ciphertexts and backups."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# PQC Messaging Migration
+
+Secure messaging is harder to migrate than TLS: the threat model is harsher (Harvest-Now-Decrypt-Later applies to ciphertexts stored for years) and the surface is wider — identity keys, prekeys, the initial root key, the ratchet, group key derivation, backups, and multi-device sync are all separate asymmetric uses. There is no single switch; migrate each in an order that matches the threat, and prefer standardised constructions over rolling your own.
+
+## When to use
+
+- Designing post-quantum protection for a messaging protocol
+- Choosing how to migrate one-to-one vs. group sessions
+- Deciding the rekey cadence for a continuous ratchet
+- Protecting stored ciphertexts, encrypted backups, or sync state
+
+## Protocol
+
+1. **Hybridise the initial key with a PQXDH-style derivation.** Combine your classical X3DH inputs with an ML-KEM encapsulation against a long-lived post-quantum prekey, feeding both into the root KDF. This mitigates HNDL for the bulk of a session's traffic while the ongoing ratchet stays classical.
+2. **Add post-quantum to the continuous ratchet where the threat warrants it.** Apple's PQ3 (iMessage) rekeys with ML-KEM periodically (every ~50 messages or 7 days) for post-compromise healing — a demonstrated design, not research. Track PQ3, Signal, and the IETF rather than inventing a cadence.
+3. **Build group messaging on MLS (RFC 9420), not a custom protocol.** Its parameterised KEM and post-quantum migration path are being designed by the IETF with review no proprietary protocol matches.
+4. **Treat stored ciphertexts and escrow as the longest exposure window.** Migrate backup, archive, and multi-device-sync encryption to a hybrid KEM with explicit forward secrecy — these keypairs live longest and are the prime HNDL target.
+5. **Plan the prekey distribution channel.** ML-KEM prekeys are 1184 B vs. 32 B; 100 prekeys per user becomes ~118 KB. Size the pool, bandwidth, and mobile battery accordingly, and remove a one-time prekey *atomically* on use to stop replay ([[pqc-bugs-operational]]).
+
+## Red flags (rationalizations to reject)
+
+- "We added post-quantum to messaging." — Which of the ten asymmetric uses? "Post-quantum" is not one switch.
+- "One-time PQ prekeys don't need replay protection." — A replayed ML-KEM encapsulation defeats forward secrecy; consume prekeys atomically, same as classical one-time prekeys.
+- "We'll design our own group protocol." — MLS has had review you won't reproduce; its post-quantum path is already being standardised.
+
+## Composes with
+
+- [[pqc-hybrid-construction]] — PQXDH and backup keys are hybrid KEMs.
+- [[pqc-bugs-operational]] — prekey replay and key-rotation amnesia are the messaging-specific findings.
+- [[mpc-audit]] — the same protocol-state scrutiny applied to multi-party key material.

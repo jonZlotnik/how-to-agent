@@ -1,0 +1,9 @@
+title: Prototype to Learn
+summary: >-
+  A prototype answers one question and then dies. Its only product is the lesson. Treat the code as disposable from the first keystroke — that permission is what makes prototyping fast and honest.
+when_to_use: >-
+  Use when exploring an unknown design space, library, algorithm, or UX — when learning matters more than shipping. Also use before committing to an approach you can't quickly reverse.
+related:
+  - tracer-bullet
+  - dig-for-requirements
+  - reversible-decisions

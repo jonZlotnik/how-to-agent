@@ -1,0 +1,9 @@
+title: PQC Regulatory Compliance
+summary: >-
+  Post-quantum requirements are set by overlapping regimes that do not fully agree — most visibly on whether hybrid constructions are required. The regime that binds you fixes your parameter sets and your deadline, so identify it before choosing primitives. If several apply, build to the strictest superset, not the union of conveniences.
+when_to_use: >-
+  Use when determining which post-quantum standard or regulatory regime binds a system, when a deployment serves government or regulated customers, or when regimes disagree on parameter sets or whether hybrid is required.
+related:
+  - pqc-primitive-selection
+  - pqc-migration-clock
+  - pqc-hybrid-construction

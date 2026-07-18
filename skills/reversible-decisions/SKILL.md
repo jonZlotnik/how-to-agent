@@ -1,0 +1,41 @@
+---
+name: reversible-decisions
+description: "Use before any architectural commitment — framework choice, vendor lock-in, schema design, public API shape, file format, naming scheme. Also use when noticing a decision is being treated as final without examination."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# Reversible Decisions
+
+There are no final decisions, only decisions whose reversal you have or haven't planned for. When two options are otherwise comparable, choose the one you can back out of cheaply. When you must take an irreversible step, do it deliberately — with the exit door documented.
+
+## When to use
+
+- Selecting a framework, database, queue, vendor, or third-party service
+- Defining a public API, on-disk format, or migration that touches stored data
+- Naming a concept that will spread through the codebase
+- About to say "we'll always need this" or "we'll never need that"
+
+## Protocol
+
+1. **Rate reversibility on a 1–5 scale**: 1 = revert in a commit, 5 = company-wide migration. Write the number down.
+2. **Compare options on cost-to-undo**, not only cost-to-adopt. A 2-week build that's a 3 to reverse usually beats a 1-week build that's a 5.
+3. **Document the exit door.** What concrete steps reverse this? Who would do them? What signals would tell us we need to?
+4. **Add abstraction only where reversal is plausible.** Don't wrap everything; do wrap the things you flagged as 4–5.
+5. **Name and date the decision** in the codebase (ADR, doc, or comment) so future-you knows it was deliberate.
+
+## Worked example
+
+Choosing a search backend. Options: Postgres full-text (cost-to-undo: 1, just drop the index) vs. managed Elasticsearch (cost-to-undo: 4, migrate data, rewrite queries, change deploy). Both adequate at current scale. Pick Postgres now; the exit door to Elasticsearch is "wrap search behind a `SearchIndex` trait with one method". Postgres day-one, swap later if scale demands. Reversal cost paid once, in the abstraction, instead of in panic.
+
+## Red flags (rationalizations to reject)
+
+- "We need to make this decision now and forever." — Almost no decision is forever. The framing is usually false urgency.
+- "It would be wasteful to abstract this." — Cheap abstractions on high-cost-to-undo decisions pay for themselves the first time.
+- "Switching costs aren't our problem yet." — They never are, until they are, and then they're enormous.
+
+## Composes with
+
+- [[dig-for-requirements]] — when the ask implies a commitment, surface it before locking in.
+- [[prototype-to-learn]] — de-risk a high-cost-to-undo decision with a cheap experiment first.
+- [[orthogonality-check]] — coupling makes decisions less reversible; orthogonal modules keep options open.

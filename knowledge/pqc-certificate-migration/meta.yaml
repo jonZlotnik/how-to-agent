@@ -1,0 +1,9 @@
+title: PQC Certificate Migration
+summary: >-
+  Certificate-signature migration is the hard half of TLS: authentication touches the whole chain — leaf, intermediates, roots in client trust stores, and every layer that parses and presents signatures — and no single deployment can drive it unilaterally. It is a coordinated, multi-year, three-phase programme, and unlike key exchange there is no Harvest-Now-Decrypt-Later pressure forcing it early.
+when_to_use: >-
+  Use when planning post-quantum certificate and PKI migration, when sizing handshake inflation from larger signatures, or when tempted to issue post-quantum certificate chains before the ecosystem supports them.
+related:
+  - pqc-tls-key-exchange
+  - pqc-primitive-selection
+  - reversible-decisions

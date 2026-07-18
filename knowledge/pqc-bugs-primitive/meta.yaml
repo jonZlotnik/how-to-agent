@@ -1,0 +1,11 @@
+title: PQC Bugs: Primitive Level
+summary: >-
+  This is a recall list, not a checklist — a way to recognise the shape of a primitive-level finding when you see it in ML-KEM or ML-DSA code. These six bug classes recur across post-quantum audits. If your code resembles one of them, don't assume it's a benign instance: eliminate the pattern, or write down explicitly why your instance is safe and have that reviewed.
+when_to_use: >-
+  Use when auditing or reviewing a post-quantum primitive implementation (ML-KEM, ML-DSA) for the recurring primitive-level bug classes — timing leaks, bounds and length validation, rejection sampling, decapsulation oracles, determinism.
+related:
+  - pqc-library-selection
+  - pqc-conformance-testing
+  - crash-early
+  - pqc-bugs-protocol
+  - mpc-audit

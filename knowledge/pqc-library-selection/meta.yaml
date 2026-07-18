@@ -1,0 +1,9 @@
+title: PQC Library Selection
+summary: >-
+  Several post-quantum libraries are now production-grade, but "ships an ML-KEM function" is not the bar. A production-ready implementation tracks the finalised standards, has constant-time guarantees with evidence, stays actively maintained, is independently auditable, fits your runtime, and passes a conformance battery in CI. Pick for maintenance, audit posture, and ecosystem fit — not for the longest feature list.
+when_to_use: >-
+  Use when picking a post-quantum cryptography library, when judging whether an implementation is production-ready, or when reference and optimised implementations are being mixed across build and test.
+related:
+  - pqc-conformance-testing
+  - pqc-bugs-operational
+  - reversible-decisions

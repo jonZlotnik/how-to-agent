@@ -1,0 +1,43 @@
+---
+name: prototype-to-learn
+description: "Use when exploring an unknown design space, library, algorithm, or UX — when learning matters more than shipping. Also use before committing to an approach you can't quickly reverse."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# Prototype to Learn
+
+A prototype answers one question and then dies. Its only product is the lesson. Treat the code as disposable from the first keystroke — that permission is what makes prototyping fast and honest.
+
+## When to use
+
+- You can name a single question the prototype must answer ("does this library handle X?", "how does this UI feel?")
+- You're about to make a hard-to-reverse decision and haven't validated the underlying assumption
+- A debate is going on that data could end faster than discussion
+- The cost of getting it wrong in production dwarfs the cost of a half-day spike
+
+## Protocol
+
+1. **Write the question down** in one sentence at the top of the file. If you can't, you're not prototyping — you're drifting.
+2. **Strip everything that doesn't answer it.** No auth, no error handling, no styling, no tests, no logging beyond what proves the answer. Cardboard, not steel.
+3. **Set a time box.** Half a day, a day, two days. Stop when the box runs out, even mid-experiment — the box itself is a finding.
+4. **Record the answer in prose**, not in the code. The code is going to disappear. The lesson belongs in a doc, ticket, or design note.
+5. **Delete the prototype** (or move to a `spike/` branch you won't merge). If it's irresistible, see the red flags below.
+
+## Distinguish from [[tracer-bullet]]
+
+- Prototype is **discarded**. Tracer is **kept**.
+- Prototype is allowed to be ugly and broken outside its one question. Tracer must be production-quality on the path it covers.
+- If you keep finding excuses to "just productionize this prototype", you needed a tracer bullet from the start.
+
+## Red flags (rationalizations to reject)
+
+- "It already works, why throw it away?" — Because it skipped everything you'll need in production. Rewriting is faster than retrofitting.
+- "I'll just clean it up." — You'll inherit a hundred decisions made under the "this is disposable" license.
+- "We don't have time to prototype." — You have even less time to undo a wrong commitment.
+
+## Composes with
+
+- [[dig-for-requirements]] — sometimes the question to prototype is "what does the user actually want here?"
+- [[reversible-decisions]] — prototyping lets you de-risk decisions that would otherwise be irreversible.
+- [[tracer-bullet]] — once the prototype answers its question, fire a tracer along the chosen path.

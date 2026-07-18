@@ -1,0 +1,40 @@
+---
+name: rule-of-optimization
+description: "Use when something feels slow and you're tempted to start tuning. Also use during code review of a 'performance' PR. Also use when a previous decision is being justified on speculative speed grounds."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# Rule of Optimization
+
+Performance work without measurement is folklore. Code that's been optimized for a bottleneck it doesn't have is just more complicated code with worse readability and no benefit. Measure, locate the actual bottleneck, fix it at the highest possible level, then stop.
+
+The "prototype before polishing" half of the Rule of Optimization is covered by [[prototype-to-learn]]. This skill is about what to do *after* the working prototype, when speed becomes the question.
+
+## When to use
+
+- About to add a cache, a pool, an inlined hot path, or hand-rolled assembly
+- A reviewer says "this would be faster if…"
+- A piece of code is being kept ugly because it's "for performance"
+- A frontend perception of slowness is being blamed on the wrong layer
+
+## Protocol
+
+1. **Don't just do something — stand there.** First confirm there is a real performance problem, with numbers, against a budget. "Feels slow" is not a budget.
+2. **Profile the actual workload.** A representative input, on representative hardware, with the actual data shape. Synthetic micro-benchmarks lie.
+3. **Find the global win first.** Algorithmic improvements (O(n²)→O(n log n)), avoided work (caching, batching, lazy eval), structural changes (overlap, parallelism). Local micro-optimizations come last and gain little.
+4. **Change one thing; remeasure.** Optimizations interact. Two "improvements" can cancel or harm. Re-run the profile after every change.
+5. **Stop at the budget.** Once you've met the target, the optimization is over. Don't keep tuning for sport — every extra line of fast-but-clever is a future maintenance bill.
+
+## Red flags (rationalizations to reject)
+
+- "It'll be slow at scale." — Maybe. Measure at scale or build a benchmark that simulates it. Don't optimize for an imaginary future load.
+- "Premature optimization is the root of all evil, *but*…" — There is no "but". Make it correct, measure, then optimize what shows up.
+- "This micro-optimization is harmless." — It costs readability now and pays performance only if the line is hot. Profile says so, or it didn't happen.
+
+## Composes with
+
+- [[prototype-to-learn]] — the partner half of the rule: get it working before you make it fast.
+- [[prove-dont-assume]] — "this is the bottleneck" is an assumption until profiled.
+- [[listen-to-nagging-doubts]] — when an optimization "should help" but the numbers don't move, the doubt is the signal.
+- [[reversible-decisions]] — optimizations that complicate the design should be reversible if the assumption changes.

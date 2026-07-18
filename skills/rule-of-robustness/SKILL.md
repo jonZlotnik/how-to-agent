@@ -1,0 +1,38 @@
+---
+name: rule-of-robustness
+description: "Use when designing a parser, deserializer, API input layer, or any boundary that receives data from elsewhere. Also use when designing what your program emits. Also use when reviewing code that 'just trusts' upstream input or emits sloppily-formed output."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# Rule of Robustness
+
+Be liberal in what you accept, rigorous in what you emit. The boundaries of a program are where the world's mess meets your invariants; the input side absorbs reasonable variation, and the output side never inflicts variation on anyone downstream. Robustness is a child of transparency and simplicity — opaque, magic-handling code is brittle, not robust.
+
+## When to use
+
+- Designing a parser, deserializer, or boundary that takes data from the outside world
+- Designing the format your program writes for someone else to consume
+- A teammate proposes "we'll just trust upstream to send valid data"
+- A teammate proposes accepting whatever bytes arrive and "doing our best"
+
+## Protocol
+
+1. **On input, accept what you can unambiguously interpret.** Trailing whitespace, missing optional fields, slightly off date formats — accept. Define what "unambiguous" means; document it.
+2. **On input, reject what you can't.** Cleanly, with a precise error. Never silently coerce, never silently drop, never silently default. Liberal acceptance is not the same as silent corruption ([[crash-early]]).
+3. **On output, emit the canonical form.** One representation, one date format, one quoting style, one line ending. Even if the parser accepts more, the emitter writes only the strictest version.
+4. **Never round-trip-degrade.** Parsing and re-emitting your own output should be a no-op. If it isn't, the format is over-flexible or the emitter is under-disciplined.
+5. **Version the format.** Postel works best when the format itself can evolve; reserve a version field or self-describing header so future-you can tighten or extend without breaking the past.
+
+## Red flags (rationalizations to reject)
+
+- "Just be permissive everywhere." — Permissive output is how malformed data spreads through a system. Be picky about what you send.
+- "Strict input is user-friendly." — User-hostile, often. A precise error on input is friendly; a noisy refusal of mostly-correct input is not.
+- "We'll fix it on the consumer side." — Now every consumer pays. Fix it at the source.
+
+## Composes with
+
+- [[rule-of-textuality]] — text formats are where Postel's law was forged; the prescriptions assume you can read what you emit.
+- [[crash-early]] — liberal acceptance only stays safe when ambiguous or invalid input crashes precisely instead of being guessed at.
+- [[design-by-contract]] — input acceptance criteria and output guarantees are contracts; write them down.
+- [[prove-dont-assume]] — round-trip tests prove canonical-emission claims; otherwise it's belief.

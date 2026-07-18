@@ -1,0 +1,9 @@
+title: Broken Windows
+summary: >-
+  One unfixed defect signals that defects are tolerated here, and the rate of new defects rises to match. The fix isn't a heroic cleanup sprint — it's a posture: when you see a broken window, you do one of three things, but never zero.
+when_to_use: >-
+  Use when entering a codebase or file you'll be working in, when noticing decay (commented-out code, stale TODOs, skipped/disabled tests, dead branches, drifted docs), or when tempted to leave a small mess 'for later'.
+related:
+  - dry-audit
+  - orthogonality-check
+  - listen-to-nagging-doubts

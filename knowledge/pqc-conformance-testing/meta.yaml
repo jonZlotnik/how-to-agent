@@ -1,0 +1,10 @@
+title: PQC Conformance Testing
+summary: >-
+  Even a correct-looking post-quantum implementation can fail in bug-class patterns that recur across audits — and passing NIST's Known Answer Tests does not catch them, because KATs only exercise correct-input round-trips. A conformance harness like Symbolic Software's Crucible drives malformed, out-of-bounds, and edge-case inputs against curated bug-class categories. It detects known bugs; it does not certify your system or replace an audit.
+when_to_use: >-
+  Use when testing a post-quantum implementation against known bug classes, when wiring a library into a conformance harness, or when deciding what NIST KATs and a clean handshake do and do not prove.
+related:
+  - pqc-library-selection
+  - prove-dont-assume
+  - pqc-bugs-primitive
+  - mpc-audit

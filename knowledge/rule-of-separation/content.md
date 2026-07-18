@@ -1,0 +1,31 @@
+# Rule of Separation
+
+Policy is *what* you decide; mechanism is *how* you carry it out. Policy changes often (user preferences, business rules, defaults); mechanism changes rarely (the actual algorithm, the disk format, the API call). Bind them together and every policy tweak drags the mechanism with it — and vice versa.
+
+## When to use
+
+- Designing a tool with a UI: split it before you write either side
+- A backend change in feature A requires unrelated UI updates
+- Business rules are encoded inside the function that does the work
+- You're tempted to bake a default deep into the engine because "everybody uses it that way"
+
+## Protocol
+
+1. **Name the engine.** What is the smallest set of operations that does the actual work? Make those callable, parameterised, and indifferent to who calls them or why.
+2. **Name the policy.** What changes when a user, config, or business rule changes? Move that to a thin layer that talks to the engine.
+3. **Forbid the engine from knowing about the policy.** No "if this is the admin UI, format differently". The engine takes parameters; the policy decides them.
+4. **Make the seam explicit.** A function signature, a config schema, a protocol — something you can document and that crash-tests at boundary violations ([[design-by-contract]]).
+5. **Validate by replacing the front end.** Swap the UI for a script or a different client. If the engine had to change, the seam was in the wrong place.
+
+## Red flags (rationalizations to reject)
+
+- "There's only ever going to be one UI." — Until the API, the cron job, the test harness, or the next platform shows up.
+- "Pushing this into config is over-engineering." — Pulling it back out, after the rule has braided itself through the engine, is what's over-engineered.
+- "The engine needs to know who's calling for security." — The engine needs an *authenticated principal*, not a UI. Pass the identity; don't peek at the caller.
+
+## Composes with
+
+- [[rule-of-composition]] — the engine is the composable core; the policy is one of many callers.
+- [[orthogonality-check]] — policy/mechanism leakage is the most common form of accidental coupling.
+- [[reversible-decisions]] — when policy lives in config, you can reverse it without redeploying.
+- [[rule-of-least-surprise]] — policy-as-config is also the most honest place to put defaults.

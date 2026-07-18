@@ -1,0 +1,10 @@
+title: Rule of Silence
+summary: >-
+  When a program has nothing surprising to say, it should say nothing. Useful information should flow downstream; ceremony, banners, and self-congratulation should not. Silence is honest: the absence of output is a signal that nothing went wrong.
+when_to_use: >-
+  Use when adding logging, progress messages, or 'success' notifications to a tool. Also use when reviewing CLI output that includes banners, decorations, status lines, or 'Done!' messages that downstream consumers will have to strip.
+related:
+  - crash-early
+  - rule-of-composition
+  - rule-of-least-surprise
+  - prove-dont-assume

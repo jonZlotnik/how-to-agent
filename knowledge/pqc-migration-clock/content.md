@@ -1,0 +1,32 @@
+# PQC Migration Clock
+
+The deadline you care about is set by your regulator or your customer's compliance team, not by when a quantum computer appears. The case for moving rests on an asymmetry of consequences: a premature migration costs engineering overhead, which is recoverable; a late one leaves traffic harvested today decryptable forever, which is not. Work backwards from the strictest deadline you face — and do not wait for a factoring record, because by the time you see one the decision was due years ago.
+
+## When to use
+
+- Scoping whether a system needs PQC migration at all, and how urgently
+- Data you transmit or store must stay confidential past 2030 (legal, medical, intelligence, IP, source-material journalism)
+- You sign artefacts that must stay valid for over a decade (firmware, CA roots, supply-chain roots)
+- Someone proposes waiting for "a CRQC exists" before acting
+- A multi-year deployment lifecycle means a migration started later can't finish in time
+
+## Protocol
+
+1. **Test the threshold for action.** Migrate now if any holds: confidentiality past 2030; signatures valid >10 years; customers/regulators/procurement demanding post-quantum attestations; or a multi-year lifecycle you can't re-cut in under 12 months.
+2. **Frame it as risk asymmetry, not timeline certainty.** Early = recoverable engineering debt (larger keys, more bandwidth). Late = unrecoverable: Harvest-Now-Decrypt-Later turns today's recorded traffic into tomorrow's plaintext, and signatures become forgeable. Decide on the asymmetry, not on a quantum date.
+3. **Map to the regulatory regime first** — everything else follows from which deadline binds you. See [[pqc-regulatory-compliance]].
+4. **Work backwards from the strictest deadline.** Budget design 3–6mo, implementation 9–18mo, deployment 6–12mo, audit/conformance 2–4mo — roughly 18–36 months end-to-end. A 2030 deadline started in 2026 is not early.
+5. **Don't wait for the milestone.** The visible factoring record is a lagging indicator; the threshold is "a CRQC is plausible within the operational lifetime of systems designed today," and it has been crossed.
+
+## Red flags (rationalizations to reject)
+
+- "No one has factored anything bigger than 15." — The milestone lags the decision by years; planning on it guarantees you start late.
+- "Standardised means ready to deploy." — FIPS finalisation is not your library, hardware, and tooling being production-ready; support lags by 6–18 months.
+- "We'll migrate when a quantum computer shows up." — HNDL means the data exposed then was harvested now. For long-lived secrets the window already closed.
+
+## Composes with
+
+- [[pqc-regulatory-compliance]] — the regime you map to sets the deadline this clock counts down to.
+- [[reversible-decisions]] — early migration is a cheap, reversible hedge; late migration is irreversible exposure.
+- [[pqc-rollout-phasing]] — the deployment phase this timeline budgets for.
+- [[listen-to-nagging-doubts]] — "we have plenty of time" is the doubt worth interrogating here.

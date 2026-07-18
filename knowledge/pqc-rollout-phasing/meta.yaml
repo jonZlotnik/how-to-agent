@@ -1,0 +1,9 @@
+title: PQC Rollout Phasing
+summary: >-
+  Treat a post-quantum migration as a normal production rollout: feature-flag the library, dark-launch to a sliver of traffic, ramp by percentage, and keep an explicit rollback path you have actually exercised. Even a sophisticated, well-instrumented operator treats this as a multi-year programme — the discipline that protects you is staging the change and defining, in advance, the thresholds at which you roll back.
+when_to_use: >-
+  Use when planning the deployment of a post-quantum change, when defining rollback thresholds, or when a rollout is being driven straight to 100% without dark launch or a tested rollback path.
+related:
+  - pqc-rollout-monitoring
+  - tracer-bullet
+  - reversible-decisions

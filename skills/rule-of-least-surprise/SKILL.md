@@ -1,0 +1,38 @@
+---
+name: rule-of-least-surprise
+description: "Use when designing a CLI, API, or library surface. Also use when picking flag names, argument order, defaults, exit codes, or error formats. Also use during review when a contributor proposes a 'creative' convention."
+---
+
+<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
+
+# Rule of Least Surprise
+
+In interface design, the second-most-creative thing you can do is also the worst. Every novelty costs the reader a lookup, every clever flag a confused user, every reinvented convention a bug at 3am. Match the patterns your users already know — or pay forever.
+
+## When to use
+
+- Designing a CLI, library API, REST endpoint, or config file syntax
+- Picking flag names, exit codes, default behaviors, or output formats
+- Naming a function whose neighbors already have a strong naming convention
+- A teammate proposes a "small improvement" to a long-standing idiom
+
+## Protocol
+
+1. **Look first at neighbors.** What do the surrounding tools / files / endpoints already do? Whatever it is, that's the prior. You'd better have a reason to deviate.
+2. **Match common idioms.** `-v` for verbose, `-h` for help, exit 0 for success, JSON over HTTP, ISO-8601 for dates. These are free correctness wins.
+3. **Defaults should match expectations.** Reading the doc should *confirm* what the reader already guessed, not surprise them. If your defaults need explanation, they're wrong.
+4. **Reserve creativity for the actual novelty.** Be conventional on the surface; be original where you genuinely solve a new problem. Don't burn the surprise budget on syntax.
+5. **Cross-check with someone who hasn't read your README.** If they can guess the flags and outputs from prior experience, you've succeeded.
+
+## Red flags (rationalizations to reject)
+
+- "Our way is better." — Maybe, marginally. The cost of forcing every user to relearn dwarfs the gain.
+- "It's clearly documented." — Documentation is the consolation prize for an interface that failed to be obvious.
+- "Consistency is the hobgoblin of little minds." — In interface design it is the friend of every human who has to remember which tool is which.
+
+## Composes with
+
+- [[rule-of-separation]] — policy layers (defaults, flag wiring) are where convention conformance lives.
+- [[design-by-contract]] — explicit contracts make conventional behavior testable.
+- [[broken-windows]] — one surprising flag invites another; conventional surfaces stay conventional.
+- [[reversible-decisions]] — interface conventions, once shipped, are among the hardest decisions to reverse.
