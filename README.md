@@ -75,16 +75,20 @@ That's the whole workflow. No build step; commit the file.
 
 ## Content
 
-Current library (22 skills):
+Current library (28 skills):
 
 - Lessons distilled from Hunt & Thomas's *The Pragmatic Programmer*
 - Lessons distilled from Eric S. Raymond's *The Art of Unix Programming*
+- Technical-writing skills distilled from Strunk & White's *The Elements of
+  Style*, William Zinsser's *On Writing Well*, and Google's developer
+  documentation style guide
 
 ## Attribution
 
-The skill content is adapted from
+The Pragmatic Programmer and Unix skills are adapted from
 [AdaJane/pragmatic-programmer-skills](https://github.com/AdaJane/pragmatic-programmer-skills)
-by Ada Jane Anderson (MIT), which distills the books above.
+by Ada Jane Anderson (MIT). The technical-writing skills are original to this
+repository and distill the sources listed above.
 
 ## License
 
