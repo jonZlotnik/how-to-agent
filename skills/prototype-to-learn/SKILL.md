@@ -1,6 +1,6 @@
 ---
 name: prototype-to-learn
-description: "Build a disposable prototype to answer one question, then discard it. Use when exploring an unknown design space, library, algorithm, or UX where learning beats shipping, or before a hard-to-reverse commitment. Skip when the path is clear."
+description: "Build a disposable prototype to answer one question, then discard it. Use when exploring an unfamiliar design space, library, algorithm, or UX, or before a hard-to-reverse commitment. Do not use when requirements and approach are already known."
 ---
 
 # Prototype to Learn

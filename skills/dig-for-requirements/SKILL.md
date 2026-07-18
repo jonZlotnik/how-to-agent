@@ -1,6 +1,6 @@
 ---
 name: dig-for-requirements
-description: "Excavate the real need behind a vague task before designing. Use when given a terse feature request or a 'just do X' instruction, or when the ask names a solution rather than a need. Skip when the need is already explicit."
+description: "Identify the real need behind a vague task before designing. Use when given a terse feature request or a 'just do X' instruction, or when the request names a solution rather than a need. Do not use when the need is already explicit."
 ---
 
 # Dig for Requirements
@@ -19,7 +19,7 @@ Requirements rarely lie on the surface. A user asking for "a way to log in" may 
 1. **Restate the ask** in your own words back to the user. If they correct you, you found a gap.
 2. **Ask "why" until you reach a user-facing outcome.** "Add export to CSV" → why → "so finance can reconcile" → why → real need is *reconciliation*, which a join report might solve better.
 3. **Hunt unstated constraints.** Volume? Frequency? Who is the user? What's the failure mode that prompted this? What did they try before?
-4. **List what you're assuming.** Read the list back. **Never** treat a load-bearing assumption as settled — confirm it, don't assume it.
+4. **List what you're assuming.** Read the list back. **Never** treat an assumption the design depends on as settled — confirm it with the user.
 5. **Restate the goal in one sentence** and read it back; repeat steps 1–4 until the user confirms it without correction.
 
 ## Example

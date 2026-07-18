@@ -1,6 +1,6 @@
 ---
 name: rule-of-minilanguages
-description: "Model a repeatable declarative domain as a tiny language instead of ad-hoc code. Use when a config file is sprouting operators, conditionals, or templating, or when you're about to write a bespoke parser again. Skip for one-off configuration."
+description: "Model a repeatable declarative domain as a small language instead of ad-hoc code. Use when a config file is accumulating operators, conditionals, or templating, or when writing another bespoke parser. Do not use for single-use configuration."
 ---
 
 # Rule of Minilanguages
