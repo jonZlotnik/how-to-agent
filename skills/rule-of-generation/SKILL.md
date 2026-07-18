@@ -3,8 +3,6 @@ name: rule-of-generation
 description: "Use before hand-writing a large set of similar functions, types, fixtures, or config files. Also use when reviewing a PR that adds the Nth nearly-identical case by hand. Also use when a schema, table, or spec already implicitly contains the answer."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Generation
 
 If the thing you're about to type follows a rule, type the rule and let a program write the rest. Human-authored repetition is where typos breed and edits go to die. The pattern *is* the source of truth; the expanded forms are derivatives.

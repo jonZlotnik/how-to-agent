@@ -3,8 +3,6 @@ name: prove-dont-assume
 description: "Use when stuck in debugging, before merging a risky change, or whenever you find yourself thinking 'it should work' or 'X is probably true'. Also use when an LLM, teammate, or doc asserts something load-bearing that hasn't been verified in this codebase."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Prove, Don't Assume
 
 Most debugging dead-ends are paved with unverified assumptions. "It should be non-null here." "This function returns sorted output." "The cache is invalidated." *Should* is not evidence. Replace every load-bearing belief with a cheap check.

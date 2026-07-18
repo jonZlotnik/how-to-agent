@@ -3,8 +3,6 @@ name: design-by-contract
 description: "Use when implementing a non-trivial function, module, or API boundary — before writing the body. Also use when reviewing an interface that has produced repeated bugs at its edges, or when adding to a module whose contract has never been written down."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Design by Contract
 
 A function is a deal: *if* the caller upholds preconditions, *then* the function delivers postconditions, while keeping invariants intact. Writing the deal down before writing the body is one of the cheapest correctness tools available — it tells you what the code must do, what it may assume, and where the boundary of responsibility lies.

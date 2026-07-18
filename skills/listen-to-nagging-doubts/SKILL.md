@@ -3,8 +3,6 @@ name: listen-to-nagging-doubts
 description: "Use when you have a 'something feels off' sensation while coding, reviewing, or about to ship — the kind of doubt that survives 'looks fine to me'. Also use when tests pass but you're surprised they passed."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Listen to Nagging Doubts
 
 A vague unease about a piece of code is not noise. It's pattern recognition from below the threshold of articulation. The mistake is to push through it because you can't yet name it. Capture it, give it ten minutes, and either disprove it or escalate.

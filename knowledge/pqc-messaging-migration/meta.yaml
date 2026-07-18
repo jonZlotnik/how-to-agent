@@ -1,9 +1,0 @@
-title: PQC Messaging Migration
-summary: >-
-  Secure messaging is harder to migrate than TLS: the threat model is harsher (Harvest-Now-Decrypt-Later applies to ciphertexts stored for years) and the surface is wider — identity keys, prekeys, the initial root key, the ratchet, group key derivation, backups, and multi-device sync are all separate asymmetric uses. There is no single switch; migrate each in an order that matches the threat, and prefer standardised constructions over rolling your own.
-when_to_use: >-
-  Use when adding post-quantum protection to secure messaging — one-to-one initial keys, the continuous ratchet, group messaging, or stored ciphertexts and backups.
-related:
-  - pqc-bugs-operational
-  - pqc-hybrid-construction
-  - mpc-audit

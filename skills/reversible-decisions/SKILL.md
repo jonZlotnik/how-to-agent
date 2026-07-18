@@ -3,8 +3,6 @@ name: reversible-decisions
 description: "Use before any architectural commitment — framework choice, vendor lock-in, schema design, public API shape, file format, naming scheme. Also use when noticing a decision is being treated as final without examination."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Reversible Decisions
 
 There are no final decisions, only decisions whose reversal you have or haven't planned for. When two options are otherwise comparable, choose the one you can back out of cheaply. When you must take an irreversible step, do it deliberately — with the exit door documented.

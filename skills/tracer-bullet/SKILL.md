@@ -3,8 +3,6 @@ name: tracer-bullet
 description: "Use when starting a new feature, integration, or system with unknown end-to-end behavior — before writing the full implementation. Also use when crossing module/service boundaries for the first time."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Tracer Bullet
 
 Build the thinnest possible end-to-end path through the system *first*. Hard-code the middle, fake the edges if you must, but make a real input produce a real output along the actual code path. Then flesh it out under tests. Unlike a prototype, the tracer stays — it becomes the skeleton.

@@ -3,8 +3,6 @@ name: rule-of-representation
 description: "Use before writing a long if/elif/switch on string or enum values. Also use when control flow branches mirror rows in a spec table, or when business rules read like 'when X then Y, when X' then Y'…'. Also use during review of cascading conditionals."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Representation
 
 Fold knowledge into data so the code can stay stupid. A complex data structure walked by simple logic is easier to read, easier to extend, and easier to verify than simple data walked by complex logic. Logic shaped like the table it's mimicking is begging to *be* the table.

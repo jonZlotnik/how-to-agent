@@ -1,9 +1,0 @@
-title: PQC Rollout Monitoring
-summary: >-
-  A post-quantum ramp is steered by a handful of handshake metrics, and the one that matters most — the negotiation rate — should climb monotonically as both ends upgrade. The others exist to catch the second-order costs of larger keys and handshakes before they become user-visible. Classify failures by type; an aggregate failure count hides the difference between "old clients" and "something is broken."
-when_to_use: >-
-  Use when instrumenting a post-quantum rollout, when deciding which handshake metrics to watch, or when a negotiation rate or failure count needs interpreting during a ramp.
-related:
-  - pqc-rollout-phasing
-  - rule-of-silence
-  - crash-early

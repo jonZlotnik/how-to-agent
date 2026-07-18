@@ -3,8 +3,6 @@ name: rule-of-textuality
 description: "Use when choosing a serialization for configs, logs, IPC, or persisted state. Also use when reviewing a proposal to introduce a binary protocol, custom marshalling format, or 'efficient' opaque blob."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Textuality
 
 Plain text is the universal solvent. Anything textual can be grep'd, diff'd, version-controlled, fixed by hand at 3am, and inspected by tools nobody has written yet. Binary formats foreclose all of that for a transient gain — usually one nobody actually measured.

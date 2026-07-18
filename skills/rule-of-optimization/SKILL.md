@@ -3,8 +3,6 @@ name: rule-of-optimization
 description: "Use when something feels slow and you're tempted to start tuning. Also use during code review of a 'performance' PR. Also use when a previous decision is being justified on speculative speed grounds."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Optimization
 
 Performance work without measurement is folklore. Code that's been optimized for a bottleneck it doesn't have is just more complicated code with worse readability and no benefit. Measure, locate the actual bottleneck, fix it at the highest possible level, then stop.

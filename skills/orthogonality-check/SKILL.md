@@ -3,8 +3,6 @@ name: orthogonality-check
 description: "Use when designing a module, reviewing a PR that touches many files, or considering whether to merge or split a component. Also use when a 'small' change unexpectedly cascades through unrelated areas."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Orthogonality Check
 
 Orthogonal components change independently. The test is simple: change one thing; count what else must move. If unrelated areas have to follow, the design is coupled, and every future change pays that tax.

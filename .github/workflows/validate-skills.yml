@@ -1,0 +1,38 @@
+name: validate-skills
+
+# Primary gate: every skill must satisfy the official Agent Skills specification
+# (agentskills.io), validated with the reference library `skills-ref`.
+# This is the authoritative check — the build fails if any skill is non-conformant.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  skills-ref:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # Official reference validator from the Agent Skills standard.
+      # Pinned to a commit SHA for reproducibility (the repo publishes no tags).
+      # To upgrade: bump the @<sha>, re-run `skills-ref validate` on all skills locally, then commit.
+      - name: Install skills-ref
+        run: pip install "git+https://github.com/agentskills/agentskills.git@38a2ff82958afee88dadf4831509e6f7e9d8ef4e#subdirectory=skills-ref"
+
+      - name: Validate every skill against the spec
+        run: |
+          fail=0
+          for d in skills/*/; do
+            if ! skills-ref validate "$d"; then
+              fail=1
+            fi
+          done
+          exit $fail

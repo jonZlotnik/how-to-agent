@@ -1,0 +1,46 @@
+name: skill-quality
+
+# Secondary, quality-focused checks. These go beyond spec conformance to grade
+# authoring quality and flag content-hygiene / safety concerns. skill-lint is
+# advisory here (it flags kept upstream content, e.g. mpc-audit's mpcsec.org
+# reference, and exits non-zero on any WARN) so it reports without blocking.
+# skillscore enforces a gentle quality floor that today's skills clear
+# (avg ~83, lowest ~76) — raise --min-score over time to ratchet quality up.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  skill-lint:
+    runs-on: ubuntu-latest
+    # Advisory: surfaces findings in the log but never fails the build.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint skills (AST + ToxicSkills heuristics)
+        # Pinned to the v3.0.0 tag's commit SHA for reproducibility.
+        uses: himself65/skill-lint@2b3ca14d4d3523da5b4a5f274571d6ae23c9b21b
+        with:
+          path: "skills"
+          claude: "false"
+
+  skillscore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - name: Install skillscore
+        # Pinned for reproducibility — an upstream scoring change could otherwise
+        # move scores and break this gate unexpectedly. Bump deliberately.
+        run: dart pub global activate skillscore 0.10.0
+      - name: Put pub global executables on PATH
+        run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
+      # Grade bands: A>=90 B>=80 C>=70 D>=60 F<60. skillscore's own CI example
+      # gates at 80 (B); our floor is 70 (C) because the lowest skill scores 76.
+      # Raise to 80 once dig-for-requirements clears it.
+      - name: Score skills (fails any below the floor)
+        run: skillscore skills/ --min-score 70

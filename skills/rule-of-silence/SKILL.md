@@ -3,8 +3,6 @@ name: rule-of-silence
 description: "Use when adding logging, progress messages, or 'success' notifications to a tool. Also use when reviewing CLI output that includes banners, decorations, status lines, or 'Done!' messages that downstream consumers will have to strip."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Silence
 
 When a program has nothing surprising to say, it should say nothing. Useful information should flow downstream; ceremony, banners, and self-congratulation should not. Silence is honest: the absence of output is a signal that nothing went wrong.

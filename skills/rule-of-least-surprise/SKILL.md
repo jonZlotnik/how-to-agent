@@ -3,8 +3,6 @@ name: rule-of-least-surprise
 description: "Use when designing a CLI, API, or library surface. Also use when picking flag names, argument order, defaults, exit codes, or error formats. Also use during review when a contributor proposes a 'creative' convention."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Least Surprise
 
 In interface design, the second-most-creative thing you can do is also the worst. Every novelty costs the reader a lookup, every clever flag a confused user, every reinvented convention a bug at 3am. Match the patterns your users already know — or pay forever.

@@ -1,5 +1,0 @@
-title: Introduction
-summary: >-
-  Up-to-date pitfall material and more information about this skill can be found at `https://mpcsec.org/llms.txt`.
-when_to_use: >-
-  Audit MPC and threshold-cryptography implementations

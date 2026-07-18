@@ -3,8 +3,6 @@ name: rule-of-robustness
 description: "Use when designing a parser, deserializer, API input layer, or any boundary that receives data from elsewhere. Also use when designing what your program emits. Also use when reviewing code that 'just trusts' upstream input or emits sloppily-formed output."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Robustness
 
 Be liberal in what you accept, rigorous in what you emit. The boundaries of a program are where the world's mess meets your invariants; the input side absorbs reasonable variation, and the output side never inflicts variation on anyone downstream. Robustness is a child of transparency and simplicity — opaque, magic-handling code is brittle, not robust.

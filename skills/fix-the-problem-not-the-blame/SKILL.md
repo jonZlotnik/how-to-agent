@@ -3,8 +3,6 @@ name: fix-the-problem-not-the-blame
 description: "Use when investigating any bug, test failure, crash, or unexpected behavior — establishes root-cause-first debugging mindset before proposing or applying any fix."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Fix the Problem, Not the Blame
 
 The goal of debugging is to understand. Blaming the compiler, the OS, the library, "flaky tests", or the user is almost always wrong and always premature. Start from the assumption that your code is the culprit, gather facts, and let the evidence — not intuition — drive the fix.

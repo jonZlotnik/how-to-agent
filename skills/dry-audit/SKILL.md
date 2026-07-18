@@ -3,8 +3,6 @@ name: dry-audit
 description: "Use before adding similar-looking functionality, during code review, or when a small change forces edits in three or more places. Also use when reviewing schemas, configs, or docs alongside the code they describe."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # DRY Audit
 
 DRY is about *knowledge*, not characters. Two functions that look alike but encode different rules aren't duplication. One business rule encoded in code + config + docs + a test fixture is. The audit hunts for knowledge with more than one home.

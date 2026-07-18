@@ -1,9 +1,0 @@
-title: Listen to Nagging Doubts
-summary: >-
-  A vague unease about a piece of code is not noise. It's pattern recognition from below the threshold of articulation. The mistake is to push through it because you can't yet name it. Capture it, give it ten minutes, and either disprove it or escalate.
-when_to_use: >-
-  Use when you have a 'something feels off' sensation while coding, reviewing, or about to ship — the kind of doubt that survives 'looks fine to me'. Also use when tests pass but you're surprised they passed.
-related:
-  - fix-the-problem-not-the-blame
-  - prove-dont-assume
-  - broken-windows

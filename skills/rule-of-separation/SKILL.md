@@ -3,8 +3,6 @@ name: rule-of-separation
 description: "Use when designing a system that has both a UI/policy layer and a 'doing' layer. Also use when a backend feature drags UI changes with it, or when business rules are tangled with the code that executes them."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Separation
 
 Policy is *what* you decide; mechanism is *how* you carry it out. Policy changes often (user preferences, business rules, defaults); mechanism changes rarely (the actual algorithm, the disk format, the API call). Bind them together and every policy tweak drags the mechanism with it — and vice versa.

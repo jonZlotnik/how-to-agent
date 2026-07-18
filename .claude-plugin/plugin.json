@@ -1,11 +1,11 @@
 {
   "name": "how-to-agent",
-  "description": "Agent-agnostic knowledge library projected into Claude Code skills — composable lessons on decision-making, debugging, hygiene, defensive design, Unix-style composition, and post-quantum cryptography migration. Adapted from Ada Jane Anderson's pragmatic-programmer-skills.",
+  "description": "A library of Agent Skills (SKILL.md open standard) — composable lessons on decision-making, debugging, hygiene, defensive design, and Unix-style composition. Portable across any skills-compatible agent. Adapted from Ada Jane Anderson's pragmatic-programmer-skills.",
   "version": "0.1.0",
   "author": {
     "name": "Jon Zlotnik",
     "email": "me@jonzlotnik.io"
   },
   "license": "MIT",
-  "keywords": ["knowledge", "pragmatic-programmer", "unix", "workflows", "debugging", "refactoring", "composition", "craft", "post-quantum", "cryptography", "migration"]
+  "keywords": ["knowledge", "pragmatic-programmer", "unix", "workflows", "debugging", "refactoring", "composition", "craft"]
 }

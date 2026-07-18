@@ -1,9 +1,0 @@
-title: PQC Primitive Selection
-summary: >-
-  NIST standardised one KEM (ML-KEM) and two signature schemes (ML-DSA, SLH-DSA). For the KEM the only question is the parameter set; for signatures you also choose between a small, fast lattice scheme and a large, conservative hash-based one. Pick the security category your regime demands, then make sure the symmetric primitives in the same data path match it — a post-quantum KEM in front of a 128-bit KDF is only as strong as the KDF.
-when_to_use: >-
-  Use when choosing post-quantum KEM and signature parameter sets, when deciding between ML-DSA and SLH-DSA for signatures, or when sizing the symmetric and KDF primitives that sit alongside a migrated handshake.
-related:
-  - pqc-regulatory-compliance
-  - pqc-hybrid-construction
-  - reversible-decisions

@@ -3,8 +3,6 @@ name: dig-for-requirements
 description: "Use when given a vague task, terse feature request, or a 'just do X' instruction — before any planning, design, or implementation. Also use when the stated requirement names a solution rather than a need."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Dig for Requirements
 
 Requirements rarely lie on the surface. A user asking for "a way to log in" may actually need "a way to keep their cart between sessions". Solve the wrong problem and you ship perfectly-built waste. The job is to excavate the *real* need before designing anything.

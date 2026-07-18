@@ -3,8 +3,6 @@ name: prototype-to-learn
 description: "Use when exploring an unknown design space, library, algorithm, or UX — when learning matters more than shipping. Also use before committing to an approach you can't quickly reverse."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Prototype to Learn
 
 A prototype answers one question and then dies. Its only product is the lesson. Treat the code as disposable from the first keystroke — that permission is what makes prototyping fast and honest.

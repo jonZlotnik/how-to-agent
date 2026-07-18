@@ -3,8 +3,6 @@ name: crash-early
 description: "Use when writing error-handling code, defensive checks, fallbacks, retries, or 'in case this ever happens' branches. Also use when reviewing code that silently catches and swallows exceptions, or returns sentinel values on bug-shaped input."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Crash Early
 
 A program that has wandered into an impossible state is no longer your program. Every line it executes afterwards is operating on a lie. The earlier and louder it stops, the smaller the blast radius, the more honest the diagnostic, and the less time you spend later wondering how data got into that shape.

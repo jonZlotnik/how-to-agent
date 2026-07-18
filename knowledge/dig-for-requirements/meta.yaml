@@ -1,9 +1,0 @@
-title: Dig for Requirements
-summary: >-
-  Requirements rarely lie on the surface. A user asking for "a way to log in" may actually need "a way to keep their cart between sessions". Solve the wrong problem and you ship perfectly-built waste. The job is to excavate the *real* need before designing anything.
-when_to_use: >-
-  Use when given a vague task, terse feature request, or a 'just do X' instruction — before any planning, design, or implementation. Also use when the stated requirement names a solution rather than a need.
-related:
-  - tracer-bullet
-  - prototype-to-learn
-  - reversible-decisions

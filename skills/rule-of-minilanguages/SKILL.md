@@ -3,8 +3,6 @@ name: rule-of-minilanguages
 description: "Use when a problem domain has repeatable declarative structure (rules, schemas, configurations, transformations). Also use when a config file is growing operators, conditionals, or templating. Also use before writing a third bespoke parser this quarter."
 ---
 
-<!-- DO NOT EDIT — generated from knowledge/ by scripts/sync_knowledge.py -->
-
 # Rule of Minilanguages
 
 Some problems are most honest when expressed as a tiny language. A pattern matcher, a build description, a routing table — when the natural way to state the rules is *as rules*, code that pretends to be procedural is fighting the domain. A well-chosen minilanguage compresses a class of problems into something readable, declarative, and extensible.
