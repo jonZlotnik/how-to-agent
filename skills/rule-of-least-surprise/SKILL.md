@@ -1,6 +1,6 @@
 ---
 name: rule-of-least-surprise
-description: "Use when designing a CLI, API, or library surface. Also use when picking flag names, argument order, defaults, exit codes, or error formats. Also use during review when a contributor proposes a 'creative' convention."
+description: "Matches conventions users already know instead of inventing new ones. Use when designing a CLI, API, or library surface, picking flag names, defaults, or exit codes, or reviewing a 'creative' convention. Do not use where no existing convention fits."
 ---
 
 # Rule of Least Surprise

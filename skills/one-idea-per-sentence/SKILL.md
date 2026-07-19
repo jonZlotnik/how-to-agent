@@ -1,6 +1,6 @@
 ---
 name: one-idea-per-sentence
-description: "Split sentences and paragraphs so each carries a single idea. Use when a sentence chains clauses with 'and', 'which', or dashes, or when a paragraph covers several topics. Do not use where joining two ideas expresses a real dependency between them."
+description: "Splits sentences and paragraphs so each carries a single idea. Use when a sentence chains clauses with 'and', 'which', or dashes, or when a paragraph covers several topics. Do not use where joining two ideas expresses a real dependency between them."
 ---
 
 # One Idea Per Sentence

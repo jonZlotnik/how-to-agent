@@ -1,6 +1,6 @@
 ---
 name: rule-of-separation
-description: "Use when designing a system that has both a UI/policy layer and a 'doing' layer. Also use when a backend feature drags UI changes with it, or when business rules are tangled with the code that executes them."
+description: "Separates policy (what to decide) from mechanism (how to execute it). Use when a system has both a rules layer and a doing layer, or when business rules tangle with the code that runs them. Do not use to add layers a small tool does not need."
 ---
 
 # Rule of Separation

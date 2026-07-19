@@ -1,6 +1,6 @@
 ---
 name: concrete-over-figurative
-description: "Replace metaphor and decorative wording with literal, specific language. Use when writing or reviewing technical prose — docs, comments, commit messages, error text. Do not use for deliberately narrative writing such as talks or essays."
+description: "Replaces metaphor and decorative wording with literal, specific language. Use when writing or reviewing technical prose — docs, comments, commit messages, error text. Do not use for deliberately narrative writing such as talks or essays."
 ---
 
 # Concrete Over Figurative

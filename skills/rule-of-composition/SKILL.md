@@ -1,6 +1,6 @@
 ---
 name: rule-of-composition
-description: "Use when designing a new program, tool, or service interface. Also use when a tool only exposes its data through an interactive UI, a custom binary protocol, or a single use case it was 'built for'."
+description: "Designs programs whose output serves as another program's input. Use when designing a tool, CLI, or service interface, or when data is reachable only through an interactive UI or private binary format. Do not use for single-caller throwaway scripts."
 ---
 
 # Rule of Composition

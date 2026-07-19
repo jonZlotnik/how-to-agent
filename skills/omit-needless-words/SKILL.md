@@ -1,6 +1,6 @@
 ---
 name: omit-needless-words
-description: "Delete words that add no information. Use when revising any prose before publishing or committing it — docs, comments, commit messages, error messages, UI text. Do not use where cutting would remove precision or a necessary qualification."
+description: "Deletes words that add no information. Use when revising any prose before publishing or committing it — docs, comments, commit messages, error messages, UI text. Do not use where cutting would remove precision or a necessary qualification."
 ---
 
 # Omit Needless Words

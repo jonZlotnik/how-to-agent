@@ -1,6 +1,6 @@
 ---
 name: broken-windows
-description: "Use when entering a codebase or file you'll be working in, when noticing decay (commented-out code, stale TODOs, skipped/disabled tests, dead branches, drifted docs), or when tempted to leave a small mess 'for later'."
+description: "Fixes, files, or deliberately accepts each small defect — never ignores one. Use when entering code you will work in, noticing decay (stale TODOs, skipped tests, dead code), or leaving a mess 'for later'. Do not use to justify unscoped rewrites."
 ---
 
 # Broken Windows

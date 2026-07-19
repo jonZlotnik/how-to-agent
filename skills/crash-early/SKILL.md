@@ -1,6 +1,6 @@
 ---
 name: crash-early
-description: "Use when writing error-handling code, defensive checks, fallbacks, retries, or 'in case this ever happens' branches. Also use when reviewing code that silently catches and swallows exceptions, or returns sentinel values on bug-shaped input."
+description: "Stops the program loudly at the first impossible state instead of continuing on corrupt data. Use when writing error handling, defensive checks, retries, or reviewing code that swallows exceptions. Do not use for expected, recoverable errors."
 ---
 
 # Crash Early

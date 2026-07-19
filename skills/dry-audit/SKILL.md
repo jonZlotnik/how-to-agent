@@ -1,6 +1,6 @@
 ---
 name: dry-audit
-description: "Use before adding similar-looking functionality, during code review, or when a small change forces edits in three or more places. Also use when reviewing schemas, configs, or docs alongside the code they describe."
+description: "Finds knowledge encoded in more than one place and consolidates it. Use before adding similar functionality, when one change forces edits in three places, or when reviewing schemas, configs, and docs. Do not use to merge coincidental lookalikes."
 ---
 
 # DRY Audit

@@ -1,6 +1,6 @@
 ---
 name: writing-agent-skills
-description: "Write or revise a SKILL.md so an agent triggers it at the right time and follows it reliably. Use when creating, editing, or reviewing a skill. Do not use for instructions that apply to every session — put those in AGENTS.md or CLAUDE.md."
+description: "Writes or revises a SKILL.md so an agent triggers it at the right time and follows it reliably. Use when creating, editing, or reviewing a skill. Do not use for instructions that apply to every session — put those in AGENTS.md or CLAUDE.md."
 ---
 
 # Writing Agent Skills
@@ -16,7 +16,7 @@ A skill has two jobs: fire at the right moment, and change what the agent does o
 
 ## Protocol
 
-1. **Write the description as a routing rule.** Lead with an action verb stating what the skill does, then "Use when" triggers, then a "Do not use" boundary. Keep the first 250 characters self-sufficient — some agents truncate there. State triggers generously: agents under-trigger skills more often than they over-trigger them.
+1. **Write the description as a routing rule.** Lead with a third-person action verb stating what the skill does — "Deletes stale branches", not "Delete stale branches". The description is a catalog entry loaded into every session; an imperative there reads as a standing instruction, while imperatives belong in the body, which loads only on activation. Follow with "Use when" triggers, then a "Do not use" boundary. Keep the first 250 characters self-sufficient — some agents truncate there. State triggers generously: agents under-trigger skills more often than they over-trigger them.
 2. **State each rule with its reason.** "Never invent a measurement, because a fabricated number reads as authority" generalizes to cases the skill never mentions; a bare list of MUSTs does not. Use literal language throughout ([[concrete-over-figurative]]).
 3. **Constrain what the agent may invent.** Any step of the form "replace vague with specific" or "fill in the details" must name the source of the specifics and say what to do when no source exists: delete the claim, cite where it came from, or ask. A step that demands specificity without a source produces fabrication.
 4. **Give the body three working parts.** A worked before/after example in a fenced block; explicit prohibitions with the rationalizations they reject; and a validation loop that tells the agent how to check its output and when to stop.
@@ -28,7 +28,7 @@ A skill has two jobs: fire at the right moment, and change what the agent does o
 ```
 Bad:  description: "Helps with error handling best practices."
 
-Good: description: "Wrap fallible calls in explicit error handling.
+Good: description: "Wraps fallible calls in explicit error handling.
       Use when writing code that does I/O, parsing, or network calls.
       Do not use for throwaway prototype code."
 ```

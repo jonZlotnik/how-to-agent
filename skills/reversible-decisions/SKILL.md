@@ -1,6 +1,6 @@
 ---
 name: reversible-decisions
-description: "Use before any architectural commitment — framework choice, vendor lock-in, schema design, public API shape, file format, naming scheme. Also use when noticing a decision is being treated as final without examination."
+description: "Weighs how cheaply a decision can be undone before committing to it. Use before framework, vendor, schema, API, or format choices, or when a decision is treated as final without examination. Do not use for choices that are already cheap to undo."
 ---
 
 # Reversible Decisions

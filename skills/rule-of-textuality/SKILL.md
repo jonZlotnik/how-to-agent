@@ -1,6 +1,6 @@
 ---
 name: rule-of-textuality
-description: "Use when choosing a serialization for configs, logs, IPC, or persisted state. Also use when reviewing a proposal to introduce a binary protocol, custom marshalling format, or 'efficient' opaque blob."
+description: "Chooses plain text over binary for configs, logs, IPC, and persisted state. Use when picking a serialization or reviewing a proposal for a custom binary format. Do not use where measured throughput or size requirements rule text out."
 ---
 
 # Rule of Textuality

@@ -1,6 +1,6 @@
 ---
 name: rule-of-silence
-description: "Use when adding logging, progress messages, or 'success' notifications to a tool. Also use when reviewing CLI output that includes banners, decorations, status lines, or 'Done!' messages that downstream consumers will have to strip."
+description: "Emits nothing when nothing surprising happened. Use when adding logging, progress messages, or success notifications, or when reviewing CLI output with banners and 'Done!' lines. Do not use to suppress errors or warnings — those are surprises."
 ---
 
 # Rule of Silence

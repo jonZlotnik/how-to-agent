@@ -1,6 +1,6 @@
 ---
 name: rule-of-generation
-description: "Use before hand-writing a large set of similar functions, types, fixtures, or config files. Also use when reviewing a PR that adds the Nth nearly-identical case by hand. Also use when a schema, table, or spec already implicitly contains the answer."
+description: "Generates repetitive code from the rule that describes it. Use before hand-writing many similar functions, fixtures, or configs, or when a schema already contains the answer. Do not use when the cases genuinely differ."
 ---
 
 # Rule of Generation

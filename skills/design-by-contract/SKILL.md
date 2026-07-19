@@ -1,6 +1,6 @@
 ---
 name: design-by-contract
-description: "Use when implementing a non-trivial function, module, or API boundary — before writing the body. Also use when reviewing an interface that has produced repeated bugs at its edges, or when adding to a module whose contract has never been written down."
+description: "States a function's preconditions, postconditions, and invariants before writing the body. Use when implementing a non-trivial function or API boundary, or reviewing an interface with repeated edge bugs. Do not use for trivial private helpers."
 ---
 
 # Design by Contract

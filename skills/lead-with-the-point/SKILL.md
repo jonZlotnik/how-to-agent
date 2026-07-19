@@ -1,6 +1,6 @@
 ---
 name: lead-with-the-point
-description: "State the conclusion or instruction first, then the supporting detail. Use when structuring a document, section, comment, commit message, or reply. Do not use where sequence is the content, such as step-by-step tutorials."
+description: "States the conclusion or instruction first, then the supporting detail. Use when structuring a document, section, comment, commit message, or reply. Do not use where sequence is the content, such as step-by-step tutorials."
 ---
 
 # Lead With the Point

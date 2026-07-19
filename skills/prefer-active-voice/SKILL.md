@@ -1,6 +1,6 @@
 ---
 name: prefer-active-voice
-description: "Rewrite passive sentences so a named actor performs the action. Use when drafting or reviewing docs, comments, commit messages, or error messages. Do not use when the actor is unknown or irrelevant and naming one would mislead."
+description: "Rewrites passive sentences so a named actor performs the action. Use when drafting or reviewing docs, comments, commit messages, or error messages. Do not use when the actor is unknown or irrelevant and naming one would mislead."
 ---
 
 # Prefer Active Voice

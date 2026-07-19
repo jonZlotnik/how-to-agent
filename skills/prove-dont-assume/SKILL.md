@@ -1,6 +1,6 @@
 ---
 name: prove-dont-assume
-description: "Use when stuck in debugging, before merging a risky change, or whenever you find yourself thinking 'it should work' or 'X is probably true'. Also use when an LLM, teammate, or doc asserts something load-bearing that hasn't been verified in this codebase."
+description: "Checks every unverified belief the work depends on instead of assuming it. Use when stuck debugging, before merging a risky change, or when 'it should work' appears in your reasoning. Do not use to re-prove what a test already covers."
 ---
 
 # Prove, Don't Assume

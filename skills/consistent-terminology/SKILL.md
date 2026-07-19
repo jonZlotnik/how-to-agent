@@ -1,6 +1,6 @@
 ---
 name: consistent-terminology
-description: "Use exactly one name for each concept throughout a document or codebase. Use when writing or reviewing docs, API references, UI text, or comments that name a concept more than once. Do not use across projects with separate established vocabularies."
+description: "Uses exactly one name for each concept throughout a document or codebase. Use when writing or reviewing docs, API references, UI text, or comments that name a concept more than once. Do not use across projects with separate established vocabularies."
 ---
 
 # Consistent Terminology

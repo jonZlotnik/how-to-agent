@@ -1,6 +1,6 @@
 ---
 name: fix-the-problem-not-the-blame
-description: "Use when investigating any bug, test failure, crash, or unexpected behavior — establishes root-cause-first debugging mindset before proposing or applying any fix."
+description: "Drives debugging from evidence to root cause instead of blaming tools, libraries, or users. Use when investigating any bug, test failure, crash, or unexpected behavior, before proposing a fix. Do not use for deciding who is responsible."
 ---
 
 # Fix the Problem, Not the Blame
