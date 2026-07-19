@@ -1,6 +1,6 @@
 ---
 name: rule-of-minilanguages
-description: "Use when a problem domain has repeatable declarative structure (rules, schemas, configurations, transformations). Also use when a config file is growing operators, conditionals, or templating. Also use before writing a third bespoke parser this quarter."
+description: "Models a repeatable declarative domain as a small language instead of ad-hoc code. Use when a config file is accumulating operators, conditionals, or templating, or when writing another bespoke parser. Do not use for single-use configuration."
 ---
 
 # Rule of Minilanguages
@@ -21,6 +21,15 @@ Some problems are most honest when expressed as a tiny language. A pattern match
 3. **Borrow before inventing.** Existing minilanguages (regex, jq, awk, JSON-Pointer, SQL subset, glob, expr) often fit. Inventing means you also own the parser, errors, docs, and corner cases.
 4. **Make it textual and editable** ([[rule-of-textuality]]). Even a binary-backed engine deserves a textual surface.
 5. **Resist creep.** When users ask for "just one more feature", first see if existing primitives compose to do it. Macros and "just a quick if" are how minilanguages turn into ad-hoc programming languages without anyone deciding to.
+6. **Test the design by reading it.** Write example programs first; if they don't read clearly, revise the grammar and repeat before you build a parser.
+
+## Example
+
+```
+# routing table as a minilanguage — declarative, least power
+GET  /users/:id  -> users.show
+POST /users      -> users.create
+```
 
 ## Red flags (rationalizations to reject)
 
