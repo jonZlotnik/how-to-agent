@@ -1,6 +1,6 @@
 ---
 name: dig-for-requirements
-description: "Identify the real need behind a vague task before designing. Use when given a terse feature request or a 'just do X' instruction, or when the request names a solution rather than a need. Do not use when the need is already explicit."
+description: "Identifies the real need behind a vague task before designing. Use when given a terse feature request or a 'just do X' instruction, or when the request names a solution rather than a need. Do not use when the need is already explicit."
 ---
 
 # Dig for Requirements
