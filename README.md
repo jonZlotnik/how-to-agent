@@ -56,16 +56,20 @@ cp -r how-to-agent/skills/broken-windows ~/.claude/skills/
 1. Create `skills/<name>/SKILL.md` (`<name>` is kebab-case and must match the
    frontmatter `name`).
 2. Frontmatter needs `name` and `description` — the description is the trigger the
-   agent matches against, so lead with *when to use this*:
+   agent matches against. Write it in three parts: a third-person verb summary of
+   what the skill does, then "Use when" triggers, then a "Do not use" boundary:
 
    ```yaml
    ---
    name: broken-windows
-   description: "Use when entering a codebase or file you'll be working in, when
-     noticing decay (stale TODOs, skipped tests, dead branches), or when tempted to
-     leave a small mess for later."
+   description: "Fixes, files, or deliberately accepts each small defect — never
+     ignores one. Use when entering code you will work in, noticing decay (stale
+     TODOs, skipped tests, dead code), or leaving a mess 'for later'. Do not use
+     to justify unscoped rewrites."
    ---
    ```
+
+   The `writing-agent-skills` skill is the authoritative guide to this pattern.
 3. Write the lesson below the frontmatter. Optionally bundle `scripts/`,
    `references/`, or `assets/` in the skill folder — the standard supports it.
 
