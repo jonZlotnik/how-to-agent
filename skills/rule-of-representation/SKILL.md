@@ -1,6 +1,6 @@
 ---
 name: rule-of-representation
-description: "Use before writing a long if/elif/switch on string or enum values. Also use when control flow branches mirror rows in a spec table, or when business rules read like 'when X then Y, when X' then Y'…'. Also use during review of cascading conditionals."
+description: "Moves complex branching into data so the logic stays simple. Use before writing a long if/elif chain on string or enum values, or when control flow mirrors the rows of a spec table. Do not use when there are only a few stable cases."
 ---
 
 # Rule of Representation

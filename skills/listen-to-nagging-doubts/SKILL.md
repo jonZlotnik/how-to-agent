@@ -1,6 +1,6 @@
 ---
 name: listen-to-nagging-doubts
-description: "Use when you have a 'something feels off' sensation while coding, reviewing, or about to ship — the kind of doubt that survives 'looks fine to me'. Also use when tests pass but you're surprised they passed."
+description: "Turns a vague 'something feels off' into a named, testable concern before shipping. Use when unease survives 'looks fine to me', or when tests pass and that surprises you. Do not use to delay after the doubt has been checked and disproved."
 ---
 
 # Listen to Nagging Doubts

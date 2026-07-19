@@ -1,6 +1,6 @@
 ---
 name: tracer-bullet
-description: "Use when starting a new feature, integration, or system with unknown end-to-end behavior — before writing the full implementation. Also use when crossing module/service boundaries for the first time."
+description: "Builds the thinnest real end-to-end path first, then fleshes it out. Use when starting a feature, integration, or system with unknown end-to-end behavior, or crossing a service boundary for the first time. Do not use for throwaway experiments."
 ---
 
 # Tracer Bullet

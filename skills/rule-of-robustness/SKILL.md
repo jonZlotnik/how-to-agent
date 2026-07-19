@@ -1,6 +1,6 @@
 ---
 name: rule-of-robustness
-description: "Use when designing a parser, deserializer, API input layer, or any boundary that receives data from elsewhere. Also use when designing what your program emits. Also use when reviewing code that 'just trusts' upstream input or emits sloppily-formed output."
+description: "Accepts reasonable input variation and emits strictly well-formed output. Use when designing a parser, deserializer, or API boundary, or reviewing code that trusts upstream input. Do not use to silently repair input that indicates a real bug."
 ---
 
 # Rule of Robustness

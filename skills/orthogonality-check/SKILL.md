@@ -1,6 +1,6 @@
 ---
 name: orthogonality-check
-description: "Use when designing a module, reviewing a PR that touches many files, or considering whether to merge or split a component. Also use when a 'small' change unexpectedly cascades through unrelated areas."
+description: "Measures coupling by changing one thing and counting what else must move. Use when designing a module, reviewing a PR that touches many files, or when a small change cascades through unrelated areas. Do not use on disposable prototype code."
 ---
 
 # Orthogonality Check

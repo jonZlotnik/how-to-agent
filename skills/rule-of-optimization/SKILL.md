@@ -1,6 +1,6 @@
 ---
 name: rule-of-optimization
-description: "Use when something feels slow and you're tempted to start tuning. Also use during code review of a 'performance' PR. Also use when a previous decision is being justified on speculative speed grounds."
+description: "Requires a measured bottleneck before performance work. Use when something feels slow and tuning is tempting, when reviewing a performance PR, or when a design is justified on speculative speed grounds. Do not use to reject profiled optimizations."
 ---
 
 # Rule of Optimization
