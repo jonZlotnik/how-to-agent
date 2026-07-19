@@ -8,8 +8,6 @@ Each skill is a plain [`SKILL.md`](https://agentskills.io) file: the **open stan
 Cursor, GitHub Copilot, Gemini CLI, and more. Write the lesson once; every
 skills-compatible agent can load it on demand.
 
-"I just want my child to make good decisions" — every parent ever
-
 ## Layout
 
 ```
