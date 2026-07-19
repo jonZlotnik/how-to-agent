@@ -17,7 +17,7 @@ Every word in technical prose should carry information. Filler phrases, redundan
 ## Protocol
 
 1. **Delete filler phrases.** "In order to" → "to". "It should be noted that X" → "X". "There is a config option that controls" → "A config option controls".
-2. **Delete redundant modifiers.** "Completely eliminate" → "eliminate". "Basically", "very", "quite", "actually" — delete unless the sentence changes meaning without them.
+2. **Delete redundant modifiers.** "Completely eliminate" → "eliminate". "Basically", "very", "quite", "actually" — delete them; keep one only if its removal changes the sentence's meaning.
 3. **Replace phrases with words.** "Is able to" → "can". "In the event that" → "if". "At this point in time" → "now". "Has the ability to" → "can".
 4. **Repeat until stable.** Re-read the text. If deleting a word does not change the meaning, delete it and read again. Stop when every remaining word is doing work.
 

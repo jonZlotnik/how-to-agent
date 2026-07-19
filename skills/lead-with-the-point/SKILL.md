@@ -16,7 +16,7 @@ Readers decide in the first sentence whether to keep reading. Put the conclusion
 
 ## Protocol
 
-1. **Write the point in one sentence.** What changed, what to do, or what is true. Put it first.
+1. **Write the point in one sentence.** What changed, what to do, or what is true. Put it first. Derive it from the content — the diff, the data, the document — not from what you expect it to say.
 2. **Order the rest by decreasing importance.** Reasons, then evidence, then caveats, then history. Each paragraph should matter less than the one before it.
 3. **Apply the rule per section.** In multi-section documents, the first sentence of each section states that section's conclusion.
 4. **Test by first sentences.** Read only the first sentence of each paragraph. If the message does not come through, restructure and test again.

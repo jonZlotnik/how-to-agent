@@ -17,7 +17,7 @@ A sentence that carries two ideas makes the reader hold both while parsing the j
 ## Protocol
 
 1. **Flag the overloaded sentences.** Look for length past ~25 words, two or more conjunctions, or nested subordinate clauses.
-2. **Split at the clause boundaries.** Give each new sentence its own subject and verb. "The parser reads the header, which contains the version, and rejects unknown versions" → "The parser reads the version from the header. It rejects unknown versions."
+2. **Split at the clause boundaries, preserving the logical relation.** Give each new sentence its own subject and verb. "The parser reads the header, which contains the version, and rejects unknown versions" → "The parser reads the version from the header. It rejects unknown versions." If splitting would detach a condition or cause from what it governs ("unless", "because"), keep that join.
 3. **Keep one topic per paragraph.** The first sentence names the topic. Move stray sentences to the paragraph where they belong.
 4. **Re-read for parse cost.** If any sentence still takes two readings, split it again. Stop when each sentence parses on the first pass.
 

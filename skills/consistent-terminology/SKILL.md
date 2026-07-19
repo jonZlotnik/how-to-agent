@@ -16,7 +16,7 @@ In technical prose, different words claim different meanings. If a doc says "wor
 
 ## Protocol
 
-1. **List the recurring concepts.** For each, pick one term. Prefer the name the code or API already uses.
+1. **List the recurring concepts and confirm the candidate synonyms share one referent.** Check the code or the definitions. If two terms name different things, this skill does not apply — keep both terms and define each. For each true synonym set, pick one term; prefer the name the code or API already uses.
 2. **Replace the synonyms.** If the API says `workspace`, the docs say "workspace" — never "project" or "environment" for the same thing.
 3. **Never vary for style.** Swapping in synonyms to avoid repetition tells the reader a distinction exists where none does. Repetition of a term is precision, not bad writing.
 4. **Verify by search.** Grep the document for the rejected synonyms. Replace each occurrence or record why it stays. Repeat after edits.

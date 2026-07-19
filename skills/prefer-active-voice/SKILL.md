@@ -17,7 +17,7 @@ Passive voice hides the actor, and in technical prose the actor is usually the i
 ## Protocol
 
 1. **Find the passives.** Search the text for "is/are/was/were/been/being" followed by a past participle.
-2. **Name the actor.** "The config is read at startup" → "The server reads the config at startup". If you cannot name the actor, find out — the gap is usually a gap in your own understanding.
+2. **Name the actor you can verify.** "The config is read at startup" → "The server reads the config at startup" — only if the code or observed behavior confirms the server does it. If you cannot verify the actor, keep the passive rather than guess: a wrong actor is a fabricated fact, and worse than a missing one.
 3. **Keep passive only on purpose.** When the actor is truly unknown or irrelevant ("the packet was corrupted in transit"), passive is correct. Make it a decision, not a default.
 4. **Recheck the revision.** Scan the result for remaining passives. Fix each one or record why it stays.
 
