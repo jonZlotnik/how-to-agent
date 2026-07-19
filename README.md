@@ -75,13 +75,17 @@ That's the whole workflow. No build step; commit the file.
 
 ## Content
 
-Current library (28 skills):
+Current library (29 skills):
 
 - Lessons distilled from Hunt & Thomas's *The Pragmatic Programmer*
 - Lessons distilled from Eric S. Raymond's *The Art of Unix Programming*
 - Technical-writing skills distilled from Strunk & White's *The Elements of
   Style*, William Zinsser's *On Writing Well*, and Google's developer
   documentation style guide
+- A meta-skill on authoring skills (`writing-agent-skills`), informed by
+  Anthropic's [skill-creator](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md),
+  [obra/superpowers' writing-skills](https://github.com/obra/superpowers/blob/main/skills/writing-skills/SKILL.md),
+  and this repository's own CI findings
 
 ## Attribution
 
