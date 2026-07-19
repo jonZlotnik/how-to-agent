@@ -1,5 +1,8 @@
 # how-to-agent
 
+[![validate-skills](https://github.com/jonZlotnik/how-to-agent/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/jonZlotnik/how-to-agent/actions/workflows/validate-skills.yml)
+[![skill-quality](https://github.com/jonZlotnik/how-to-agent/actions/workflows/skill-quality.yml/badge.svg)](https://github.com/jonZlotnik/how-to-agent/actions/workflows/skill-quality.yml)
+
 A library of **Agent Skills** — small, sharp software-engineering lessons on
 decision-making, debugging, hygiene, defensive design, and Unix-style composition.
 
