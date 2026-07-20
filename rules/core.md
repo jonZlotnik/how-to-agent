@@ -17,7 +17,7 @@ lives in `skills/` and loads on demand.
 
 Apply to all prose: docs, comments, commit messages, error messages, UI text, replies.
 
-- Use literal, specific language. Replace metaphor and decorative wording with the plain verb or the concrete condition. [[concrete-over-figurative]]
+- Use literal, specific language. Replace metaphor, decorative wording, and insider jargon with the plain verb or the concrete condition. [[concrete-over-figurative]]
 - Delete words that add no information. [[omit-needless-words]]
 - State the conclusion or instruction first, then the supporting detail. [[lead-with-the-point]]
 - Write in active voice: name the actor who performs the action. [[prefer-active-voice]]
