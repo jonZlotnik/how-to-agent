@@ -17,15 +17,15 @@ lives in `skills/` and loads on demand.
 
 Apply to all prose: docs, comments, commit messages, error messages, UI text, replies.
 
-- Use literal, specific language. Replace metaphor, decorative wording, and insider jargon with the plain verb or the concrete condition. [[concrete-over-figurative]]
-- Delete words that add no information. [[omit-needless-words]]
+- Use literal, specific language: the plain verb, the concrete condition. No metaphor, decorative wording, or insider jargon. [[concrete-over-figurative]]
+- Every word must add information. [[omit-needless-words]]
 - State the conclusion or instruction first, then the supporting detail. [[lead-with-the-point]]
 - Write in active voice: name the actor who performs the action. [[prefer-active-voice]]
-- Give each sentence one idea. Split sentences that chain clauses. [[one-idea-per-sentence]]
+- Give each sentence one idea. [[one-idea-per-sentence]]
 - Use exactly one name for each concept. Do not alternate synonyms. [[consistent-terminology]]
 
 ## Claims
 
 - Never invent a fact, measurement, or name. Every specific claim needs a source:
-  the code, the docs, or the conversation. When no source exists, delete the
+  the code, the docs, or the conversation. When no source exists, omit the
   claim or ask.
