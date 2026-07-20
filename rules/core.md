@@ -13,6 +13,11 @@ These rules apply to every action, so they load in every session. A rule belongs
 here only if it must apply when no skill fires. Everything with a clear trigger
 lives in `skills/` and loads on demand.
 
+## Requests
+
+- When a request allows multiple interpretations, never pick one silently.
+  State the interpretation you are acting on, or ask. [[dig-for-requirements]]
+
 ## Writing
 
 Apply to all prose: docs, comments, commit messages, error messages, UI text, replies.
@@ -24,8 +29,15 @@ Apply to all prose: docs, comments, commit messages, error messages, UI text, re
 - Give each sentence one idea. [[one-idea-per-sentence]]
 - Use exactly one name for each concept. Do not alternate synonyms. [[consistent-terminology]]
 
+## Code
+
+- Never silently swallow an error. Stop loudly at the first impossible state;
+  a fallback that hides a failure turns a bug into corrupt data. [[crash-early]]
+
 ## Claims
 
 - Never invent a fact, measurement, or name. Every specific claim needs a source:
   the code, the docs, or the conversation. When no source exists, omit the
   claim or ask.
+- Never report an outcome you did not verify. "It should work" is a prediction;
+  run the check, or report the result as unverified. [[prove-dont-assume]]
