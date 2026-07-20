@@ -16,27 +16,49 @@ skills-compatible agent can load it on demand.
 ```
 skills/<name>/
 └── SKILL.md      # frontmatter (name, description) + the lesson in markdown
+rules/
+└── core.md       # always-on rules, loaded into every session via rulesync
 ```
 
 Nothing is generated — `SKILL.md` *is* the portable format. Agents use
 **progressive disclosure**: at startup they read only each skill's `name` and
 `description`; when a task matches the description, the full file is loaded.
 
+## Skills vs. always-on rules
+
+The two directories split by trigger:
+
+- A **skill** has a clear trigger ("entering code", "writing error handling").
+  The agent loads it when the trigger fires, so its lesson costs nothing the
+  rest of the time.
+- An **always-on rule** has no trigger — it applies to every action. The
+  writing rules are the core example: agents write prose in every session, so
+  "use literal language" cannot wait for a skill to fire. These live in
+  [rules/core.md](rules/core.md), which rulesync compiles into each tool's
+  always-loaded file (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules`, …).
+
+Add a rule only if it must apply when no skill fires; otherwise write a skill.
+Every rule line loads in every consumer session forever, so CI enforces a
+60-line ceiling on rule files and checks that each `[[link]]` resolves to a
+skill.
+
 ## Use it in your project
 
 ### Any agent — via [rulesync](https://github.com/dyoshikawa/rulesync)
 
-[rulesync](https://github.com/dyoshikawa/rulesync) fetches shared skills from a repo and
-generates the right files for 30+ tools. From your project:
+[rulesync](https://github.com/dyoshikawa/rulesync) fetches shared skills and rules from a
+repo and generates the right files for 30+ tools. This is the only path that installs
+the always-on rules. From your project:
 
 ```bash
-npx rulesync fetch jonZlotnik/how-to-agent --features skills
-npx rulesync generate --targets "*" --features skills
+npx rulesync fetch jonZlotnik/how-to-agent --features rules,skills
+npx rulesync generate --targets "*" --features rules,skills
 ```
 
 ### Claude Code — via the plugin (global, one command)
 
-Loads the skills in every project from your user install, no per-project copy:
+Loads the skills in every project from your user install, no per-project copy.
+The plugin ships skills only — use rulesync to install the always-on rules:
 
 ```
 /plugin marketplace add jonZlotnik/how-to-agent

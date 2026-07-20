@@ -36,3 +36,29 @@ jobs:
             fi
           done
           exit $fail
+
+  # rules/*.md are always-on: every line loads in every consumer session.
+  # The 60-line ceiling forces additions to displace something instead of
+  # accumulating, and every [[link]] must resolve to a real skill.
+  validate-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check rule links and line ceiling
+        run: |
+          fail=0
+          for f in rules/*.md; do
+            for link in $(grep -o '\[\[[a-z0-9-]*\]\]' "$f" | tr -d '[]' | sort -u); do
+              if [ ! -d "skills/$link" ]; then
+                echo "::error file=$f::[[${link}]] does not match any skills/ directory"
+                fail=1
+              fi
+            done
+            lines=$(wc -l < "$f")
+            if [ "$lines" -gt 60 ]; then
+              echo "::error file=$f::${lines} lines exceeds the 60-line always-on ceiling"
+              fail=1
+            fi
+          done
+          exit $fail
