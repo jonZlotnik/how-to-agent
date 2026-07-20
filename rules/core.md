@@ -18,7 +18,7 @@ lives in `skills/` and loads on demand.
 Apply to all prose: docs, comments, commit messages, error messages, UI text, replies.
 
 - Use literal, specific language: the plain verb, the concrete condition. No metaphor, decorative wording, or insider jargon. [[concrete-over-figurative]]
-- Every word must add information. [[omit-needless-words]]
+- Every word must add information. Words that help the reader parse — articles, transitions, qualifiers — count as information; do not compress prose into fragments. [[omit-needless-words]]
 - State the conclusion or instruction first, then the supporting detail. [[lead-with-the-point]]
 - Write in active voice: name the actor who performs the action. [[prefer-active-voice]]
 - Give each sentence one idea. [[one-idea-per-sentence]]
