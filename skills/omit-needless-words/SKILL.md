@@ -19,7 +19,7 @@ Every word in technical prose should carry information. Filler phrases, redundan
 1. **Delete filler phrases.** "In order to" → "to". "It should be noted that X" → "X". "There is a config option that controls" → "A config option controls".
 2. **Delete redundant modifiers.** "Completely eliminate" → "eliminate". "Basically", "very", "quite", "actually" — delete them; keep one only if its removal changes the sentence's meaning.
 3. **Replace phrases with words.** "Is able to" → "can". "In the event that" → "if". "At this point in time" → "now". "Has the ability to" → "can".
-4. **Repeat until stable.** Re-read the text. If deleting a word does not change the meaning, delete it and read again. Stop when every remaining word is doing work.
+4. **Repeat until stable.** Re-read the text. If deleting a word does not change the meaning or slow the reader, delete it and read again. Stop when every remaining word is doing work.
 
 ## Example
 
@@ -34,6 +34,7 @@ After:  To run the tests, first start the database.
 - "The longer version sounds more professional." — It sounds padded. Authority comes from precision.
 - "The extra words soften the message." — Softening an instruction makes it ambiguous. Say what to do.
 - "Readers can skim past filler." — Readers cannot tell filler from content until they have read both.
+- "Articles, transitions, and qualifiers add no information." — They add parsing speed, which is information. Deleting them compresses prose into telegraphic fragments that cost the reader more time than the words saved.
 
 ## Composes with
 
